@@ -2,31 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Carro A-Frame com AR</title>
+    <title>Carro AR WebXR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-ar-hit-test@1.0.0/dist/aframe-ar-hit-test.min.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
+      webxr="optionalFeatures: hit-test;"
+      xr-mode="immersive-ar"
+      renderer="colorManagement: true; physicallyCorrectLights: true; alpha: true;"
+      ar-hit-test
       embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true"
     >
-      <!-- Marcador AR -->
-      <a-marker type="pattern" url="marker/marcador.patt">
-        <!-- Modelo do carro -->
-        <a-entity
-          gltf-model="./assets/mclaren_mp45__formula_1.glb"
-          scale="0.5 0.5 0.5"
-          rotation="0 180 0"
-          position="0 0 0"
-        ></a-entity>
-      </a-marker>
+      <!-- Luz -->
+      <a-light type="ambient" intensity="1"></a-light>
 
-      <!-- Câmara -->
+      <!-- Carro invisível no início -->
+      <a-entity
+        id="carro"
+        gltf-model="./assets/mclaren_mp45__formula_1.glb"
+        scale="0.5 0.5 0.5"
+        visible="false"
+      ></a-entity>
+
+      <!-- Câmera AR -->
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      AFRAME.scenes[0].addEventListener("ar-hit-test-select", function (e) {
+        const car = document.querySelector("#carro");
+        const pose = e.detail.position;
+
+        // Define posição do carro no mundo real
+        car.setAttribute("position", pose);
+        car.setAttribute("visible", "true");
+      });
+    </script>
   </body>
 </html>
