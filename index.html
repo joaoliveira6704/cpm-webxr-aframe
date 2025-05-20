@@ -2,44 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>AR Carro WebXR</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carro A-Frame com AR</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-ar-hit-test@1.0.0/dist/aframe-ar-hit-test.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.min.js"></script>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <a-scene
-      webxr="optionalFeatures: hit-test; requiredFeatures: hit-test;"
-      xr-mode="immersive-ar"
-      ar-hit-test
-      renderer="alpha: true; physicallyCorrectLights: true;"
-      vr-mode-ui="enabled: false"
       embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
     >
-      <!-- Luz -->
-      <a-light type="ambient" intensity="1"></a-light>
+      <!-- Marcador AR padrão "hiro" para teste -->
+      <a-marker preset="hiro">
+        <!-- Luz ambiente e direcional -->
+        <a-light type="ambient" color="#ffffff"></a-light>
+        <a-light type="directional" color="#ffffff" position="0 1 1"></a-light>
 
-      <!-- Carro escondido -->
-      <a-entity
-        id="carro"
-        gltf-model="https://cdn.aframe.io/test-models/models/glTF/Car/Car.gltf"
-        scale="0.5 0.5 0.5"
-        visible="false"
-      ></a-entity>
+        <!-- Modelo do carro -->
+        <a-entity
+          gltf-model="./assets/mclaren_mp45__formula_1.glb"
+          scale="1 1 1"
+          rotation="0 180 0"
+          position="0 0.1 0"
+        ></a-entity>
+
+        <!-- Plano para referência -->
+        <a-plane
+          position="0 0 0"
+          rotation="-90 0 0"
+          width="1"
+          height="1"
+          color="#7BC8A4"
+        ></a-plane>
+      </a-marker>
 
       <!-- Câmera -->
       <a-entity camera></a-entity>
     </a-scene>
-
-    <script>
-      const cena = document.querySelector("a-scene");
-      const carro = document.querySelector("#carro");
-
-      cena.addEventListener("ar-hit-test-select", (e) => {
-        carro.setAttribute("position", e.detail.position);
-        carro.setAttribute("visible", true);
-      });
-    </script>
   </body>
 </html>
