@@ -8,50 +8,425 @@
   </head>
 
   <body>
-    <a-scene>
-      <a-scene
-        inspector="url: https://aframe.io/releases/1.4.0/aframe-inspector.min.js"
-      >
-        <!-- Scene... -->
-      </a-scene>
-      <!-- Ground -->
-      <a-plane
-        position="0 0 -10"
-        rotation="-90 0 0"
-        width="30"
-        height="100"
-        color="#333333"
-      ></a-plane>
+    <a-assets>
+      <img id="sky" src="./assets/skybox.webp" />
+      <img id="wallTexture" src="./assets/texturewall.webp" />
+      <img id="ceilingTexture" src="./assets/textureceiling.jpg" />
+      <img id="garageDoor" src="./assets/garagedoors.png" />
+      <img id="tire-side" src="./assets/tire.jpg" />
+      <img id="tire-face" src="./assets/tireface.png" />
+    </a-assets>
 
-      <!-- Pit lane markings -->
-      <a-plane
-        position="0 0.01 -10"
-        rotation="-90 0 0"
-        width="5"
-        height="100"
-        color="#FFFFFF"
-        opacity="0.5"
-      ></a-plane>
-
-      <!-- Lighting -->
-      <a-light type="ambient" color="#FFFFFF" intensity="0.5"></a-light>
-      <a-light
-        type="directional"
-        color="#FFFFFF"
-        intensity="0.5"
-        position="-1 1 0"
-      ></a-light>
-      <!-- Marcador AR padrão "hiro" para teste -->
-      <!-- Luz ambiente e direcional -->
-      <a-light type="ambient" color="#ffffff"></a-light>
-      <a-light type="directional" color="#ffffff" position="0 1 1"></a-light>
-
-      <!-- Modelo do carro -->
-      <a-entity gltf-model="./assets/mclaren_mp45__formula_1.glb"></a-entity>
+    <a-scene
+      keyboard-shortcuts=""
+      screenshot=""
+      xr-mode-ui=""
+      device-orientation-permission-ui=""
+    >
       <a-entity
-        look-controls
-        wasd-controls
-        data-aframe-default-camera
+        sound="autoplay: true; loop: true; positional: false; src: ./assets/pitambience.mp3; volume: 0.1"
+      ></a-entity>
+
+      <a-entity id="pit" position="0 -0.22184 0">
+        <a-box
+          src="#wallTexture"
+          position="0 2.22304 -13.72342"
+          scale="12 4 0.5"
+          material="repeat: 6 2"
+        ></a-box>
+        <a-box
+          src="#wallTexture"
+          position="-6.24355 2.223 -5.97882"
+          scale="16 4 0.5"
+          rotation="0 90 0"
+          material="repeat: 8 2"
+        ></a-box>
+        <a-box
+          src="#wallTexture"
+          position="6.244 2.223 -5.97882"
+          scale="16 4 0.5"
+          rotation="0 90 0"
+          material="repeat: 8 2"
+        ></a-box>
+        <a-box
+          src="#wallTexture"
+          position="0 4 -5.97882"
+          scale="16 0.52743 13"
+          rotation="0 90 0"
+          material="repeat: 8 8"
+        ></a-box
+        ><a-box
+          src="#garageDoor"
+          position="0 2.96973 1.90706"
+          scale="0.02891 1.5349 11.98325"
+          rotation="0 90 0"
+          id="garagedoor"
+        ></a-box> </a-entity
+      ><a-entity id="car" position="1.14004 0 0"
+        ><a-entity class="chassis"
+          ><a-entity
+            position="-1.16603 0.40133 -1.21291"
+            geometry="primitive: dodecahedron; radius: 0.77"
+            scale="1.30131 0.35491 2.6944"
+            id="chassismain"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.40761 0.61076"
+            geometry="primitive: cone; radiusBottom: 0.7; radiusTop: 0.34; segmentsHeight: 16; segmentsRadial: 37; thetaLength: 361.6"
+            scale="0.41737 2.11634 0.1642"
+            rotation="82.62509772022575 179.9998479605043 179.9998479605043"
+            id="chassisfront"
+            material="color: #FF8000; metalness: 0.5"
+          ></a-entity
+          ><a-entity
+            position="-1.16752 0.50157 -1.47872"
+            geometry="primitive: cylinder; segmentsHeight: 16; segmentsRadial: 37; thetaLength: 361.6"
+            scale="0.31286 2.11634 0.1642"
+            rotation="90 180 179.9998479605043"
+            id="chassisfront-2"
+            material="color: #FF8000; metalness: 0.5"
+          ></a-entity
+          ><a-entity
+            position="-1.16752 0.77616 -2.27166"
+            geometry="primitive: cylinder; height: 1.25; radius: 0.86; segmentsHeight: 16; segmentsRadial: 37; thetaLength: 361.6"
+            scale="0.12 0.43998 0.1"
+            rotation="90 180 179.9998479605043"
+            id="chassisfront-3"
+            material="color: #FF8000; metalness: 0.5"
+          ></a-entity
+          ><a-entity
+            position="-1.1686 0.73305 -1.33067"
+            geometry="primitive: cylinder; height: 1.25; radius: 0.11; segmentsHeight: 16; segmentsRadial: 37; thetaLength: 361.6"
+            scale="0.21782 0.21873 0.1"
+            rotation="44.552052233782554 179.9998479605043 179.9998479605043"
+            id="chassisfront-5"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.16871 0.67506 -1.82757"
+            geometry="primitive: torus; radius: 1.26; radiusTubular: 0.05; segmentsRadial: 38"
+            scale="0.154 0.32747 0.2"
+            rotation="-69.38919969490861 -175.49697264857116 176.41313216298533"
+            id="chassisfront-6"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.15785 0.70906 -2.72929"
+            geometry="primitive: cone; height: 1.25; radiusBottom: 0.19; radiusTop: 0.86; segmentsHeight: 16; segmentsRadial: 37; thetaLength: 361.6"
+            scale="0.12 0.36477 0.1"
+            rotation="71.63061058946039 -16.73838902695187 -13.250221970195417"
+            id="chassisfront-4"
+            material="color: #000000"
+          ></a-entity
+        ></a-entity>
+        <a-entity id="frontwing"
+          ><a-entity
+            position="-1.16603 0.25215 1.66865"
+            geometry="primitive: cone; radiusBottom: 0.51; radiusTop: 0.1; segmentsHeight: 17; segmentsRadial: 37; thetaLength: 361.6"
+            scale="2.2111 0.28467 0.107"
+            rotation="90 0 0"
+            id="frontwing"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.29656 1.48723"
+            geometry="segmentsHeight: 17"
+            scale="2.2111 0.17394 0.03101"
+            rotation="79.94995777475994 179.9998479605043 179.9998479605043"
+            id="frontwing"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.31838 1.42408"
+            geometry="segmentsHeight: 17"
+            scale="2.2111 0.17394 0.03101"
+            rotation="79.94995777475994 179.9998479605043 179.9998479605043"
+            id="frontwing"
+            material="color: #FF8000; metalness: 0.5"
+          ></a-entity
+          ><a-entity
+            position="-0.05687 0.38584 1.33321"
+            geometry="segmentsHeight: 17"
+            scale="-0.0194 0.17394 0.27751"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="frontwing-2"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-2.27307 0.38584 1.33321"
+            geometry="segmentsHeight: 17"
+            scale="-0.0194 0.17394 0.27751"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="frontwing-4"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-0.05955 0.38597 1.40111"
+            geometry="primitive: cone; radiusTop: 0.68; segmentsHeight: 17"
+            scale="-0.0194 0.28209 0.13562"
+            rotation="180 179.9998479605043 179.9998479605043"
+            id="frontwing-3"
+            material="color: #FF8000"
+          ></a-entity
+          ><a-entity
+            position="-2.27322 0.38598 1.41584"
+            geometry="primitive: cone; radiusTop: 0.68; segmentsHeight: 17"
+            scale="-0.0194 0.28209 0.13562"
+            rotation="180 179.9998479605043 179.9998479605043"
+            id="frontwing-5"
+            material="color: #FF8000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.35438 1.33117"
+            geometry="segmentsHeight: 17"
+            scale="2.2111 0.17394 0.03101"
+            rotation="79.94995777475994 179.9998479605043 179.9998479605043"
+            id="frontwing"
+            material="color: #000000; emissive: #000000"
+            ><a-entity
+              position="-0.06074 0.37472 1.43027"
+              geometry="primitive: cone; radiusTop: 0.23; segmentsHeight: 17"
+              scale="0.03075 0.26043 0.12436"
+              id="frontwing"
+            ></a-entity
+            ><a-entity
+              position="-2.27021 0.375 1.43027"
+              geometry="primitive: cone; radiusTop: 0.23; segmentsHeight: 17"
+              scale="0.03075 0.26 0.12436"
+              id="frontwing"
+            ></a-entity
+            ><a-entity
+              position="-0.06387 0.37455 1.34204"
+              geometry="segmentsHeight: 17"
+              scale="0.03075 0.26242 0.12436"
+              id="frontwing"
+            ></a-entity
+            ><a-entity
+              position="-2.26994 0.375 1.34204"
+              geometry="segmentsHeight: 17"
+              scale="0.03075 0.262 0.12436"
+              id="frontwing"
+            ></a-entity> </a-entity></a-entity
+        ><a-entity id="spoiler" position="0 -0.2111 0.47733"
+          ><a-entity
+            position="-1.16604 0.98324 -3.76395"
+            geometry="segmentsHeight: 17"
+            scale="1.37564 0.17394 0.01109"
+            rotation="53.4976422891601 179.99870204491404 179.9740648597234"
+            id="spoilerpart"
+            material="color: #FF8000; metalness: 1"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.90093 -3.6247"
+            geometry="segmentsHeight: 17"
+            scale="1.37564 0.17665 0.01013"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="spoilerpart"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.75437 -3.56987"
+            geometry="segmentsHeight: 17"
+            scale="0.02324 0.06711 0.30545"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="spoilerpart"
+            material="color: #FF8000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.75437 -3.27493"
+            geometry="segmentsHeight: 17"
+            scale="0.02324 0.52132 0.30545"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="spoilerpart-2"
+            material="color: #FF8000"
+          ></a-entity
+          ><a-entity
+            position="-1.16603 0.75437 -2.76627"
+            geometry="segmentsHeight: 17"
+            scale="0.02324 0.52132 0.30545"
+            rotation="90 179.9998479605043 179.9998479605043"
+            id="spoilerpart-3"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-0.47622 0.9432 -3.69673"
+            geometry="segmentsHeight: 17"
+            scale="0.01281 0.10855 0.31299"
+            id="spoilerpart"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.85867 0.9432 -3.69673"
+            geometry="segmentsHeight: 17"
+            scale="0.01281 0.10855 0.30669"
+            id="spoilerpart"
+            material="color: #000000"
+          ></a-entity
+        ></a-entity>
+        <a-entity id="wheel"
+          ><a-entity
+            position="-2.1055 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.2 0.32758 0.2"
+            rotation="0 -179.9998479605043 -90.00021045914971"
+            material="alphaTest: 0.76; ambientOcclusionMapIntensity: 1.59; color: black; displacementScale: 2.28; wireframeLinewidth: 20"
+            id="wheel-1"
+          ></a-entity
+          ><a-entity
+            position="-1.64731 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.62039 0.02"
+            rotation="0 0 90"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            id="wheel"
+            position="-1.84475 0.43249 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.15421 0.02"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.54417 0.42438 0.93488"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="-3.949971039631895 -16.856991290543952 80.1573684965973"
+            id="suspension"
+            material="color: #000000; metalnessTextureOffset: -0.4 0"
+          ></a-entity
+          ><a-entity
+            position="-1.55251 0.42279 0.72997"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="2.339959635314282 20 79.66004113042375"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity></a-entity
+        ><a-entity id="wheel-2" rotation="0 180 0" position="-2.32338 0 1.64345"
+          ><a-entity
+            position="-2.1055 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.2 0.32758 0.2"
+            rotation="0 -179.9998479605043 -90.00021045914971"
+            id="wheel-2"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.64731 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.62039 0.02"
+            rotation="0 0 90"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            id="suspension"
+            position="-1.84475 0.43249 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.15421 0.02"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.54417 0.42438 0.93488"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="-3.949971039631895 -16.856991290543952 80.1573684965973"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.55251 0.42279 0.72997"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="2.339959635314282 20 79.66004113042375"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity></a-entity
+        ><a-entity id="wheel-3" position="-0.04044 0 -3.60029"
+          ><a-entity
+            position="-2.1055 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.2 0.32758 0.2"
+            rotation="0 -179.9998479605043 -90.00021045914971"
+            id="wheel-3"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.64731 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.62039 0.02"
+            rotation="0 0 90"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            id="suspension"
+            position="-1.84475 0.43249 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.15421 0.02"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.54417 0.42438 0.93488"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="-3.949971039631895 -16.856991290543952 80.1573684965973"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.55251 0.42279 0.72997"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="2.339959635314282 20 79.66004113042375"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity></a-entity
+        ><a-entity
+          id="wheel-4"
+          position="-2.32368 0 -1.98321"
+          rotation="0 180 0"
+          ><a-entity
+            position="-2.1055 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.2 0.32758 0.2"
+            rotation="0 -179.9998479605043 -90.00021045914971"
+            id="wheel-4"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.64731 0.375 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.62039 0.02"
+            rotation="0 0 90"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            id="suspension"
+            position="-1.84475 0.43249 0.8326"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.15421 0.02"
+            material="color: #000000; metalness: 1"
+          ></a-entity
+          ><a-entity
+            position="-1.54417 0.42438 0.93488"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="-3.949971039631895 -16.856991290543952 80.1573684965973"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity
+          ><a-entity
+            position="-1.55251 0.42279 0.72997"
+            geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
+            scale="0.02 0.67808 0.02"
+            rotation="2.339959635314282 20 79.66004113042375"
+            id="suspension"
+            material="color: #000000"
+          ></a-entity></a-entity
       ></a-entity>
     </a-scene>
   </body>
