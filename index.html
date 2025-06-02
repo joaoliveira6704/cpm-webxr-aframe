@@ -36,7 +36,6 @@
       device-orientation-permission-ui=""
       fog="color: #g6d6as; density: 1000; far: 700; near: 0.48"
     >
-      </a-entity>
       <a-sky src="#sky" material="color: #00d9ff"></a-sky>
       <a-entity
         sound="autoplay: true; loop: true; src: ./assets/pitambience.mp3; volume: 0.1"
@@ -486,7 +485,7 @@
               rotation="90 179.9998479605043 179.9998479605043"
               id="spoilerpart-3"
               material="color: #FF8000"
-              sound__enigne="autoplay: true; src: ./assets/engine_idle.mp3; volume: 0.7"
+              sound__enigne="autoplay: true; loop: true; src: ./assets/engine_idle.mp3; volume: 0.7"
             ></a-entity
             ><a-entity
               position="-0.47622 0.9432 -3.69673"
@@ -1129,13 +1128,13 @@
               material="color: #00eb1b"
             ></a-entity
             ><a-entity
-              position="-1.16603 0.75437 -2.76627"
+              position="-1.16591 0.75164 -2.76627"
               geometry="segmentsHeight: 17"
               scale="0.39374 0.52132 0.30545"
               rotation="90 179.9998479605043 179.9998479605043"
               id="spoilerpart-6"
               material="color: #00eb1b"
-              sound__enigne="autoplay: true; src: ./assets/engine_idle.mp3; volume: 0.7"
+              sound__enigne="autoplay: true; loop: true; src: ./assets/engine_idle.mp3; volume: 0.7"
             ></a-entity
             ><a-entity
               position="-0.47622 0.9432 -3.69673"
@@ -1552,9 +1551,17 @@
         material="color: #353535"
         position="0 -1.64224 -1.94701"
         rotation="270 -0.01 180"
-      ></a-entity
-    > <a-entity id="cameraRig" position="0 1.6 5" movement-controls="fly: true">
-  <a-camera></a-camera>
-</a-entity></a-scene>
+      ></a-entity>
+      <a-entity
+        id="cameraRig"
+        position="0 1.6 5"
+        movement-controls="fly: true"
+        gamepad-controls=""
+      >
+        <a-camera
+          position="0.007357525367141892 1.6 -3.6787577785527272"
+          rotation="-12.60507149287811 -0.34377467707849396 0"
+        ></a-camera> </a-entity
+    ></a-scene>
   </body>
 </html>
