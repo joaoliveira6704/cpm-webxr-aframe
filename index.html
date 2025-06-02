@@ -17,6 +17,11 @@
       <img id="garageDoor" src="./assets/garagedoors.png" />
       <img id="tire-side" src="./assets/tire.jpg" />
       <img id="tire-face" src="./assets/tireface.png" />
+      <audio
+        id="pit-sound"
+        src="./assets/pitambience.mp3"
+        preload="auto"
+      ></audio>
       <a-asset-item id="toolbox" src="./assets/toolbox.glb"></a-asset-item>
     </a-assets>
 
@@ -27,7 +32,7 @@
       device-orientation-permission-ui=""
     >
       <a-entity
-        sound="autoplay: true; loop: true; positional: false; src: ./assets/pitambience.mp3; volume: 0.1"
+        sound="src: #pit-sound; autoplay: true; loop: true; volume: 0.1"
       ></a-entity>
 
       <a-entity id="pit" position="0 0 0">
