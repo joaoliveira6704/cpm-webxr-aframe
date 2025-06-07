@@ -25,16 +25,18 @@
         <img id="garageDoor" src="./assets/garagedoors.png" />
         <img id="tire-side" src="./assets/tire.jpg" />
         <img id="tire-face" src="./assets/tireface.png" />
-        <audio
+        <a-asset-item
+          response-type="arraybuffer"
           id="pit-sound"
           src="./assets/pitambience.mp3"
           preload="auto"
-        ></audio>
-        <audio
+        ></a-asset-item>
+        <a-asset-item
+          response-type="arraybuffer"
           id="engine-sound"
           src="./assets/engine_idle.mp3"
           preload="auto"
-        ></audio>
+        ></a-asset-item>
         <a-asset-item id="toolbox" src="./assets/toolbox.glb"></a-asset-item>
       </a-assets>
       <a-sky src="#sky" material="color: #00d9ff"></a-sky>
@@ -241,6 +243,13 @@
                 rotation="180 90.00021045914971 90.00021045914971"
                 id="chassisfront-27"
                 material="color: #FF8000; metalness: 0.5"
+              ></a-entity
+              ><a-entity
+                position="-1.21705 0.7379 -0.88878"
+                scale="3.18728 3.11606 3.18728"
+                rotation="-80.99159504630778 -3.704745103315903 93.95591107673292"
+                id="chassisfront-34"
+                text__sponsor="alphaTest: 2.13; baseline: top; color: #000000; tabSize: 4.7; value: MCLAREN"
               ></a-entity
               ><a-entity
                 position="-0.85125 0.41563 -0.93857"
@@ -795,6 +804,13 @@
               rotation="270 0 0"
               id="chassisfront-33"
               material="color: #000000; metalness: 0.5"
+            ></a-entity
+            ><a-entity
+              position="-1.21705 0.7379 -0.88878"
+              scale="3.18728 3.11606 3.18728"
+              rotation="-80.99159504630778 -3.704745103315903 93.95591107673292"
+              id="TEXT-SAUBER"
+              text__sponsor="alphaTest: 2.13; baseline: top; color: #000000; tabSize: 4.7; value: SAUBER"
             ></a-entity
             ><a-entity
               position="-1.41951 0.41619 -1.74919"
@@ -1561,122 +1577,6 @@
         position="-1.87842 0.065 26.91007"
         rotation="0 90 0"
       >
-        <!-- Position Animations -->
-        <a-animation
-          attribute="position"
-          dur="27000"
-          from="-1.878 0.065 26.910"
-          to="-1.878 0.065 26.910"
-          begin="0"
-          repeat="indefinite"
-        >
-          <a-animation
-            attribute="position"
-            dur="3000"
-            to="15 0.065 25.2"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="3000"
-            to="21.549 0.065 17.326"
-            begin="3000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="5000"
-            to="21.549 0.065 -34.29"
-            begin="6000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="4000"
-            to="1.296 0.065 -51.515"
-            begin="11000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="3000"
-            to="-17.248 0.065 -51.515"
-            begin="15000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="2000"
-            to="-24.52 0.065 -43.09"
-            begin="18000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="3000"
-            to="-24.54 0.065 3.042"
-            begin="20000"
-          ></a-animation>
-          <a-animation
-            attribute="position"
-            dur="4000"
-            to="-1.878 0.065 26.910"
-            begin="23000"
-          ></a-animation>
-        </a-animation>
-
-        <!-- Rotation Animations -->
-        <a-animation
-          attribute="rotation"
-          dur="27000"
-          from="0 90 0"
-          to="0 90 0"
-          begin="0"
-          repeat="indefinite"
-        >
-          <a-animation
-            attribute="rotation"
-            dur="3000"
-            to="0 135 0"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="3000"
-            to="0 180 0"
-            begin="3000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="5000"
-            to="0 -45 0"
-            begin="6000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="4000"
-            to="0 -90 0"
-            begin="11000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="3000"
-            to="0 -135 0"
-            begin="15000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="2000"
-            to="0 0 0"
-            begin="18000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="3000"
-            to="0 45 0"
-            begin="20000"
-          ></a-animation>
-          <a-animation
-            attribute="rotation"
-            dur="4000"
-            to="0 90 0"
-            begin="23000"
-          ></a-animation>
-        </a-animation>
-
         <a-entity
           position="-0.71328 -0.0865 -1.94368"
           gltf-model="./assets/race_car_driver.glb"
