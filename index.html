@@ -23,7 +23,6 @@
         <img id="wallTexture" src="./assets/texturewall.webp" />
         <img id="ceilingTexture" src="./assets/textureceiling.jpg" />
         <img id="garageDoor" src="./assets/garagedoors.png" />
-        <img id="tire-side" src="./assets/tire.jpg" />
         <img id="tire-face" src="./assets/tireface.png" />
         <a-asset-item
           response-type="arraybuffer"
@@ -515,13 +514,32 @@
             ></a-entity>
             <a-entity id="wheel"
               ><a-entity
-                position="-2.1055 0.375 0.8326"
-                geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-                scale="0.2 0.32758 0.2"
-                rotation="0 -179.9998479605043 -90.00021045914971"
-                material="alphaTest: 0.76; ambientOcclusionMapIntensity: 1.59; color: black; displacementScale: 2.28; wireframeLinewidth: 20"
-                id="wheel-1"
-              ></a-entity
+                id="wheel-2"
+                position="-2.10623 0.37638 0.83414"
+                rotation="0 0 -90"
+                scale="0.58 1.64419 0.58"
+              >
+                <!-- Wheel Body -->
+                <a-cylinder
+                  geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                  material="color: #000000"
+                ></a-cylinder>
+
+                <!-- Wheel Face (front) -->
+                <a-circle
+                  position="0 0.101 0"
+                  rotation="270 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle>
+
+                <!-- Wheel Face (back) -->
+                <a-circle
+                  position="0 -0.101 0"
+                  rotation="90 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle> </a-entity
               ><a-entity
                 position="-1.64731 0.375 0.8326"
                 geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -531,12 +549,32 @@
                 material="color: #000000"
               ></a-entity
               ><a-entity
-                id="wheel"
-                position="-1.84475 0.43249 0.8326"
-                geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-                scale="0.02 0.15421 0.02"
-                material="color: #000000"
-              ></a-entity
+                id="wheel-2"
+                position="-2.10623 0.37638 0.83414"
+                rotation="0 0 -90"
+                scale="0.58 1.64419 0.58"
+              >
+                <!-- Wheel Body -->
+                <a-cylinder
+                  geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                  material="color: #000000"
+                ></a-cylinder>
+
+                <!-- Wheel Face (front) -->
+                <a-circle
+                  position="0 0.101 0"
+                  rotation="270 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle>
+
+                <!-- Wheel Face (back) -->
+                <a-circle
+                  position="0 -0.101 0"
+                  rotation="90 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle> </a-entity
               ><a-entity
                 position="-1.54417 0.42438 0.93488"
                 geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -558,13 +596,32 @@
               rotation="0 180 0"
               position="-2.32338 0 1.64345"
               ><a-entity
-                position="-2.1055 0.375 0.8326"
-                geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-                scale="0.2 0.32758 0.2"
-                rotation="0 -179.9998479605043 -90.00021045914971"
                 id="wheel-2"
-                material="color: #000000"
-              ></a-entity
+                position="-2.10623 0.37638 0.83414"
+                rotation="0 0 -90"
+                scale="0.58 1.64419 0.58"
+              >
+                <!-- Wheel Body -->
+                <a-cylinder
+                  geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                  material="color: #000000"
+                ></a-cylinder>
+
+                <!-- Wheel Face (front) -->
+                <a-circle
+                  position="0 0.101 0"
+                  rotation="270 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle>
+
+                <!-- Wheel Face (back) -->
+                <a-circle
+                  position="0 -0.101 0"
+                  rotation="90 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle> </a-entity
               ><a-entity
                 position="-1.64731 0.375 0.8326"
                 geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -598,13 +655,32 @@
               ></a-entity></a-entity
             ><a-entity id="wheel-3" position="-0.04044 0 -3.62382"
               ><a-entity
-                position="-2.10343 0.375 0.8326"
-                geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-                scale="0.2 0.32758 0.2"
-                rotation="0 -179.9998479605043 -90.00021045914971"
-                id="wheel-3"
-                material="color: #000000"
-              ></a-entity
+                id="wheel-2"
+                position="-2.10623 0.37638 0.83414"
+                rotation="0 0 -90"
+                scale="0.58 1.64419 0.58"
+              >
+                <!-- Wheel Body -->
+                <a-cylinder
+                  geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                  material="color: #000000"
+                ></a-cylinder>
+
+                <!-- Wheel Face (front) -->
+                <a-circle
+                  position="0 0.101 0"
+                  rotation="270 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle>
+
+                <!-- Wheel Face (back) -->
+                <a-circle
+                  position="0 -0.101 0"
+                  rotation="90 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle> </a-entity
               ><a-entity
                 position="-1.64731 0.375 0.8326"
                 geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -641,13 +717,32 @@
               position="-2.32368 0 -1.98321"
               rotation="0 180 0"
               ><a-entity
-                position="-2.09606 0.375 0.8326"
-                geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-                scale="0.2 0.32758 0.2"
-                rotation="0 -179.9998479605043 -90.00021045914971"
-                id="wheel-4"
-                material="color: #000000"
-              ></a-entity
+                id="wheel-2"
+                position="-2.10623 0.37638 0.83414"
+                rotation="0 0 -90"
+                scale="0.58 1.64419 0.58"
+              >
+                <!-- Wheel Body -->
+                <a-cylinder
+                  geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                  material="color: #000000"
+                ></a-cylinder>
+
+                <!-- Wheel Face (front) -->
+                <a-circle
+                  position="0 0.101 0"
+                  rotation="270 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle>
+
+                <!-- Wheel Face (back) -->
+                <a-circle
+                  position="0 -0.101 0"
+                  rotation="90 0 0"
+                  radius="0.5"
+                  material="src: #tire-face"
+                ></a-circle> </a-entity
               ><a-entity
                 position="-1.64731 0.375 0.8326"
                 geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -1172,13 +1267,32 @@
           ></a-entity>
           <a-entity id="wheel-5"
             ><a-entity
-              position="-2.1055 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              material="alphaTest: 0.76; ambientOcclusionMapIntensity: 1.59; color: black; displacementScale: 2.28; wireframeLinewidth: 20"
-              id="wheel-5"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -1188,12 +1302,32 @@
               material="color: #000000"
             ></a-entity
             ><a-entity
-              id="wheel-5"
-              position="-1.84475 0.43249 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.02 0.15421 0.02"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.54417 0.42438 0.93488"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -1215,13 +1349,32 @@
             rotation="0 180 0"
             position="-2.32338 0 1.64345"
             ><a-entity
-              position="-2.1055 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              id="wheel-5"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -1255,13 +1408,32 @@
             ></a-entity></a-entity
           ><a-entity id="wheel-5" position="-0.04044 0 -3.62382"
             ><a-entity
-              position="-2.10343 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              id="wheel-5"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -1298,13 +1470,32 @@
             position="-2.32368 0 -1.98321"
             rotation="0 180 0"
             ><a-entity
-              position="-2.09606 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              id="wheel-5"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -2004,13 +2195,33 @@
           ></a-entity>
           <a-entity id="wheel"
             ><a-entity
-              position="-2.1055 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              material="alphaTest: 0.76; ambientOcclusionMapIntensity: 1.59; color: black; displacementScale: 2.28; wireframeLinewidth: 20"
-              id="wheel-1"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+              animation="dur: 2000; easing: linear; loop: true; property: rotation; to: 360 0 -90"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -2020,12 +2231,33 @@
               material="color: #000000"
             ></a-entity
             ><a-entity
-              id="wheel"
-              position="-1.84475 0.43249 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.02 0.15421 0.02"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+              animation="dur: 2000; easing: linear; loop: true; property: rotation; to: 360 0 -90"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.54417 0.42438 0.93488"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -2047,13 +2279,33 @@
             rotation="0 180 0"
             position="-2.32338 0 1.64345"
             ><a-entity
-              position="-2.1055 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
               id="wheel-2"
-              material="color: #000000"
-            ></a-entity
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+              animation="dur: 2000; easing: linear; loop: true; property: rotation; to: -360 0 -90"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -2087,13 +2339,33 @@
             ></a-entity></a-entity
           ><a-entity id="wheel-3" position="-0.04044 0 -3.62382"
             ><a-entity
-              position="-2.10343 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              id="wheel-3"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+              animation="dur: 2000; easing: linear; loop: true; property: rotation; to: 360 0 -90"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
@@ -2130,13 +2402,33 @@
             position="-2.32368 0 -1.98321"
             rotation="0 180 0"
             ><a-entity
-              position="-2.09606 0.375 0.8326"
-              geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
-              scale="0.2 0.32758 0.2"
-              rotation="0 -179.9998479605043 -90.00021045914971"
-              id="wheel-4"
-              material="color: #000000"
-            ></a-entity
+              id="wheel-2"
+              position="-2.10623 0.37638 0.83414"
+              rotation="0 0 -90"
+              scale="0.58 1.64419 0.58"
+              animation="dur: 2000; easing: linear; loop: true; property: rotation; to: -360 0 -90"
+            >
+              <!-- Wheel Body -->
+              <a-cylinder
+                geometry="height: 0.2; radius: 0.5; segmentsHeight: 17"
+                material="color: #000000"
+              ></a-cylinder>
+
+              <!-- Wheel Face (front) -->
+              <a-circle
+                position="0 0.101 0"
+                rotation="270 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle>
+
+              <!-- Wheel Face (back) -->
+              <a-circle
+                position="0 -0.101 0"
+                rotation="90 0 0"
+                radius="0.5"
+                material="src: #tire-face"
+              ></a-circle> </a-entity
             ><a-entity
               position="-1.64731 0.375 0.8326"
               geometry="primitive: cylinder; radius: 1.43; segmentsHeight: 17"
